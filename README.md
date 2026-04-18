@@ -6,6 +6,7 @@
 [![Supabase](https://img.shields.io/badge/Supabase-3FCF8E?style=flat-square&logo=supabase&logoColor=white)](https://supabase.com/)
 [![Groq](https://img.shields.io/badge/Groq_AI-FF4B00?style=flat-square&logo=databricks&logoColor=white)](https://groq.com/)
 [![Cloudflare R2](https://img.shields.io/badge/Cloudflare_R2-F38020?style=flat-square&logo=cloudflare&logoColor=white)](https://developers.cloudflare.com/r2/)
+[![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)](https://vercel.com/)
 
 > **Live product:** [peechz.com](https://peechz.com)
 > **Author:** Mathew Sekanjako — [LinkedIn](https://linkedin.com/in/sekanjako-mathew) · [sekanjakomathew3.0@gmail.com](mailto:sekanjakomathew3.0@gmail.com)
