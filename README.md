@@ -4,7 +4,9 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![Supabase](https://img.shields.io/badge/Supabase-3FCF8E?style=flat-square&logo=supabase&logoColor=white)](https://supabase.com/)
-[![Groq](https://img.shields.io/badge/Groq_AI-FF4B00?style=flat-square&logo=databricks&logoColor=white)](https://groq.com/)
+[![Groq](https://img.shields.io/badge/Groq-FF4B00?style=flat-square&logo=databricks&logoColor=white)](https://groq.com/)
+[![Llama 3.3](https://img.shields.io/badge/Llama_3.3-0668E1?style=flat-square&logo=meta&logoColor=white)](https://www.llama.com/)
+[![GPT-OSS](https://img.shields.io/badge/GPT--OSS_20B-412991?style=flat-square&logo=openai&logoColor=white)](https://openai.com/open-models/)
 [![Cloudflare R2](https://img.shields.io/badge/Cloudflare_R2-F38020?style=flat-square&logo=cloudflare&logoColor=white)](https://developers.cloudflare.com/r2/)
 [![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)](https://vercel.com/)
 
@@ -288,8 +290,11 @@ The Python backend never touches video bytes. Videos live in **Cloudflare R2** a
 - **pg_cron + Edge Functions** for scheduled cleanup work (not yet hot, infra is in place)
 
 ### AI / Inference
-- **Groq API** with multi-key rotation (up to 3 keys, 60s cooldown on 429)
-- **Model fallback chain:** `openai/gpt-oss-20b` → `llama-3.1-8b-instant` → `llama-3.3-70b-versatile`
+- **Groq API** for LLM inference — multi-key rotation (up to 3 keys, 60s cooldown on 429)
+- **3-model fallback chain**, in order of preference:
+  1. `openai/gpt-oss-20b` — OpenAI's open-source 20B-param model (default)
+  2. `llama-3.1-8b-instant` — Meta's fast 8B model (fallback on rate limit)
+  3. `llama-3.3-70b-versatile` — Meta's 70B model (fallback on quality-critical tasks)
 - **Markdown-based prompt templates** (`agents/instructions/*.md`) with inline Python fallbacks
 
 ### Infrastructure
